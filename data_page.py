@@ -9,7 +9,6 @@ class DataPage:
         self.page = page
         self.content = ft.Column()
 
-
     def fetch_and_display_data(self, class_id):
         """Получение и отображение данных."""
         conn = connect_db()

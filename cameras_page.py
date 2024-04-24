@@ -36,7 +36,7 @@ class CamerasPage:
             # Добавьте больше классов и камер по мере необходимости
         }
 
-
+    
 
         
     
@@ -299,25 +299,9 @@ class CamerasPage:
 
     def open_video_in_new_window(self, index):
         self.content.controls.clear() 
+        change_button_layout()
         # self.page.update()
-        videos = []
-        for i, media in enumerate(self.sample_media):  # Change the number to adjust how many videos you want to display
-            video = ft.Video(
-                expand=True,
-            playlist=media,  # Adjust playlist slicing for each video
-            playlist_mode=ft.PlaylistMode.LOOP,
-            fill_color=ft.colors.BLUE_400,
-            aspect_ratio=16/9,
-            volume=100,
-            autoplay=False,
-            filter_quality=ft.FilterQuality.HIGH,
-            muted=False,
-            on_loaded=lambda e: print("Video loaded successfully!"),
-            on_enter_fullscreen=lambda e: print("Video entered fullscreen!"),
-            on_exit_fullscreen=lambda e: print("Video exited fullscreen!"),
-            )
-            videos.append(video)
-            self.content.controls.append(video)
+        self.content.controls.append(self.videos)
 
 
     def open_dlg_modal(self):
